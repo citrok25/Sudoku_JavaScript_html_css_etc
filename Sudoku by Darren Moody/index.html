@@ -1,15 +1,11 @@
 <!-- File Prologue:
  * Name:            Darren Moody
- * Class:           CS2550-001
- * Professor:       Dr. Brian Durney
- * Assignment:      Assignment 2,3,4,5,6, Final
  * File Name:       index.html
  * 
  * Description:     The index file for my Sudoku project
  * -->
 
 <!DOCTYPE html>
-<!--OFFICIAL SUBMISSION VERSION-->
 <html>
 
     <head>
@@ -26,15 +22,12 @@
         <h2>Sudoku</h2>
 
         <p>
-            Darren Moody<br>
-            CS2550<br>
-            Dr. Durney
+            Darren Moody<br>   
         </p><hr>
 		
 		<center>
-        <h3><i>Click on the button below to LOG IN and Play Sudoku</i> <br>!!!!Login removed for Final Project as per instructions!!!!
-		<br>I did leave the animation in the game since it indicates what game you are playing.
-		<br>CHOOSE "DEBUG TEST" in difficulties for an easily solvable puzzle to test Winning the game.</h3>
+        <h3><i>Click the "PLAY SUDOKU" button below to LOG IN and Play Sudoku.<br>
+		CHOOSE "DEBUG TEST" in difficulties for an easily solvable puzzle to test Winning the game.</i></h3>
 		<a href="gameGrid.html"><input type="button" class="button" value="PLAY SUDOKU!" id="buttons"/></a><!--onclick="checkCookie()"-->
 		</center>
 		<div id="login"></div>
@@ -44,51 +37,62 @@
 		<br><hr>
 		<p><a  href="checkpoint.html"><h2>My Current Checkpoint.html</h2></a></p>
 		<br><hr>
-        <h2>For my Game project using a Grid</h2>
-        <h2>I will be creating my own version of the game Sudoku!</h2>
-        <h2>This version will use the MVC design pattern and will contain a Model and a View</h2>
-        <ul>
-            <li>The Model contains information about the game-play, state of the game, the parameters and objects <br>
-                (game pieces) of the game.</li>
+        <h2>I am creating a Game project / Web App using a Grid and</h2>
+        <h2>will be developing my own version of the game Sudoku!</h2>
+        <h2>This version will use the MVC design pattern and will contain</h2>
+		<h2>a Model, View, and Controller.</h2>
+		<ul>
+            <li>The Model contains functions, parameters and information about the state of the game, .</li>		
             <ul>
-                <li>For the case of Sudoku, I will have cell objects, interactive buttons, and a drop-down menu.</li>
+                <li>The 'game pieces' will be numbers contained within the cells of a table.</li>
+				<li>The information such as a piece's location and value is manipulated, or changed, by the<br>
+					user's controls, or the Controller, as laid out in the Viewside of the MVC pattern.</li>
+				<li>The Controller will be contained within the View.</li>	
+            </ul>
+        </ul>
+        <ul>
+			<li>The View instantiates the interface for the game-play, how the game is displayed<br>
+				to the user, including what the gameboard and game objects will look like.</li> 
+            <ul>
+				<li>This View is primarily where the look and feel of the game is produced.</li>
+				<li>In a nutshell, the view produces the game interface, or game-board design.</li>
+			</ul>
+		</ul>
+		<ul>
+			<li>The Controller.</li>
+			<ul>
+				<li>"For this project, I'm not going to worry about separating the controller from the view into<br>
+					a separate source file."</li>
+                <li>For the case of Sudoku, I will have interactive cell objects and buttons, a 'helper' keypad<br>
+					that gives the player the possible values possible for a particular cell, and a drop-down menu.</li>
+				<li>All of these interactive objects would be considered the Controller side of the MVC pattern.</li>
                 <li>Each object will contain parameters as needed for the gameplay.</li>
-                <li>The "game pieces" will be numbers contained within the cells of a table.</li>
-                <li>The Model for this game will contain the information for all of these things.</li>
+                <li>The Model for this game will contain and track the information for all of these things.</li>
             </ul>
         </ul>
-        <ul>
-            <li>The View contains functions, parameters and information about how the game is displayed.</li>		
-            <ul>
-                <li>The Controller will be contained within the View.</li>	
-                <li>"For this assignment, don't worry about separating the controller from the view."</li>
-                <li>In a nutshell, the view produces the game interface, or game-board design.</li>
-            </ul>
-        </ul>
-
-    
-    <h3>If you wish to learn more about Sudoku, <br>you can click below:</h3>
-    <p><a href="http://www.sudokuessentials.com/how_to_play_sudoku.html"><h2>Sudoku Essentials(external link)</h2></a></p>
-
-    <p>For my Sudoku game I will be generating a Sudoku table that is made up of 81 separate cell objects 
-        in a 9 x 9 table. The 9 x 9 table will be made up of 9 separate 3 x 3 tables, which I will call mini-grids.
-        My functions for generating the table will be passing objects as parameters, which objects 
-        will contain the parameters for creating the table size, as well as states contained in arrays. The 
-        parameters contained in the objects will be shown below.
-    <h3>Playing this Version of Sudoku</h3>
-    <ul>
+	
+    <h3>Playing this Version of Sudoku:</h3>
+    <ul><li> My Sudoku game will be generating a Sudoku table that is made up of 81 separate cell objects<br>
+		in a 9 x 9 table. The 9 x 9 table will be made up of 9 separate 3 x 3 tables, which I will call mini-grids.<br>
+		My functions for generating the table will be passing objects as parameters, which objects will<br> 
+		contain the parameters for creating the table size, as well as states contained in arrays.<br>
+		The parameters contained in the objects will be shown below.</li>
         <li>The player will see a blank game-grid and other elements of the game's interface</li>
-        <li>The player must then select a difficulty from the drop-down list of difficulties and a new puzzle of that difficulty will auto-load on selection.</li>
-        <li>A certain amount of the blank cells on the game-grid will be filled in automatically.</li>
-        <li>The player can select any empty-cells on the game-grid and possible correct answers for that cell will be given in a separate clickable grid called the keypad.</li>
-        <li>The player clicks a check answers to check their answers.</li>
+        <li>The player must select a difficulty from the drop-down list of difficulties and a new puzzle of that difficulty will auto-load on selection.</li>
+		<li>Each new puzzle generated will be UNIQUE and RANDOM, having been created using a back-tracking algorithm</li>
+        <li>A certain number of cells will be left blank on the game-grid depending on the difficulty chosen. <br>
+			The harder the difficulty chosen, the more blank cells you will start out with.</li>
+        <li>The player can select any empty-cells on the game-grid and the possible correct answers for that cell will be given in a separate clickable grid called the keypad.</li>
+        <li>The player can click a 'Check Answers' button to check their answers at any time during the game.</li>
         <li>If all the answers are correct a message will say "everything is good so far", or if there is a conflict the conflicting cells will be highlighted in red".</li>
-        <li>Once all of the numbers have been filled in and all of the answers are correct the game is over and a "you win" message will display.</li>
-        <li><h3>Winning the game: </h3></li>
+        <li>Once all of the numbers have been filled in and all of the answers are correct, you have won the game! The game is over and a 'you win' message will display.</li>
+    </ul>
+	<h3>Winning the game: </h3>
+	<ul>
         <li>In order to win at Sudoku you must enter the numbers 1 through 9 in each row, column, and mini-grid (3 x 3 table<br>
-            within the larger table making up the entire game board). You may enter the numbers in any order but you cannot<br>
-            repeat the same number twice in a given row, column, or mini-grid. For example, if there is already a 6 in a given row,<br>
-            then there must not be another 6 in the same horizontal row (across the entire board), vertical column (across the entire board)<br>
+            within the larger table grid). You may enter the numbers in any order but you cannot repeat the same number twice <br>
+            in any corresponding row, column, or mini-grid. For example, if there is already a 6 in a given row, then there <br>
+            must not be another 6 in the same horizontal row (across the entire board), vertical column (across the entire board)<br>
             or in the same 3 x 3 mini-grid, or else one of the sixes must be in the wrong place...this is called a "conflict"!!! <br>
             Once you have filled in the entire Sudoku Game Board with numbers 1 - 9, having no conflicts, YOU WIN!</li>
     </ul><hr>	   
@@ -97,13 +101,12 @@
     <ul>
         <li>NUM_CELLS is the number of cells on the gameboard (81, 9 * 9)</li>
         <li>Numbers possible for each cell are (1 - 9)</li>
-        <li>A 0 will represent a blank cell </li>
-        <li>I will make an attempt at generating new game puzzles.</li>
-        <li>There will be 4 or 5 difficulties to choose from ranging from easy to very-hard.</li>
+        <li>I will make an attempt at generating new, unique game puzzles.</li>
+        <li>There will be 4 or 5 difficulties to choose from ranging from Easy to Extra Hard.</li>
     </ul>
-    <h3>Objects (for assignment 3)</h3>
+    
     <ul>
-        <li>SudokuModel</li>
+        <li>SudokuModel - JavaScript file.</li>
         <ul>
             <li>Contains information about the model</li>
             <ul>
@@ -118,10 +121,11 @@
             </ul>
         </ul>
     </ul>
-    <h3>Sudoku Game Board</h3>
+    <h3>Sudoku Objects and Game Board</h3>
     <ul>
-        <li>New Game - Button</li>
+        <li>SudokuView.js - JavaScript file.</li>
         <ul>
+			<li>New Game - Button</li>
             <li>Creates a new game-grid.</li>
         </ul>
     </ul>
@@ -158,6 +162,7 @@
         <li>MouseOver or MouseClick functions should have some nice transitions for cells in the grid (shading or something)</li>
         <li>MouseOver or MouseClick functions should return the value in the cell that was selected</li>
     </ul><hr>
-
+	<center><h3>If you wish to learn more about Sudoku, <br>you can click the link below:</h3></center>
+    <p><a href="http://www.sudokuessentials.com/how_to_play_sudoku.html"><h2>Sudoku Essentials(external link)</h2></a></p>
 </body>
 </html>
